@@ -1,0 +1,18 @@
+# Docker Compose is a tool that was developed to help define and share multi-container applications. With Compose, we can create a YAML file to define the services and with a single command, can spin everything up or tear it all down.
+
+version: '3.8'
+services:
+  dev-db:
+    image: postgres:13
+    ports:
+      - 5434:5432
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 123
+      POSTGRES_DB: nest
+    networks:
+      - freecodecamp
+networks:
+  freecodecamp:
+
+# So we will install prima CLI and prisma client to manage our database. Prisma CLI is used to interact with your Prisma project from the command line. It can initialize new project assets, generate Prisma Client, run migrations, deploy migrations and analyze existing database structures through introspection to automatically create your application models. 
